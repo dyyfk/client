@@ -9,7 +9,7 @@ var generateMessage = (from, text) => {
 var generateLocationMessage = (from, latitude, longitude) => {
   return {
     from,
-    url: "http://ditu.amap.com/regeo?lng="+longitude+"&lat="+latitude,
+    url: "https://ditu.amap.com/regeo?lng="+longitude+"&lat="+latitude,
     createdAt: new Date().getTime()
   };
 };
