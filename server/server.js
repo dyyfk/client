@@ -13,6 +13,17 @@ var io = socketIO(server);
 io.on('connection', (socket)=>{
 	console.log('New users connected');
 	
+	
+	socket.emit('newMessage',{
+		from: 'example@qq.com',
+		text: 'Hey what s going on',
+		createAt: 12.30,
+	});
+	
+	socket.on('createMessage',(message)=>{
+		console.log('Message created', message);
+	});
+	
 	socket.on('disconnect',()=>{
 		console.log('User disconnected');
 	});
