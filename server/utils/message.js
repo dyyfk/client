@@ -1,9 +1,17 @@
-var generatedMessage = (from, text) =>{
-	return {
-		from,
-		text,
-		createdAt: new Date().getTime()
-	};
+var generateMessage = (from, text) => {
+  return {
+    from,
+    text,
+    createdAt:new Date().getTime()
+  };
 };
 
-module.exports = {generatedMessage};
+var generateLocationMessage = (from, latitude, longitude) => {
+  return {
+    from,
+    url: "http://ditu.amap.com/regeo?lng="+longitude+"&lat="+latitude,
+    createdAt: new Date().getTime()
+  };
+};
+
+module.exports = {generateMessage, generateLocationMessage};
