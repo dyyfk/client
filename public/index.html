@@ -18,15 +18,25 @@
 					<input type="text" name="name" autofocus/>
 				</div>
 				<div class="form-field">
-					<label>Room name</label>
-					<input type="text" name="room" value = "dyyfk"/>
+					<label>Join Room</label>
+					<div id="room-list" name="roomJoined">
+						
+					</div>
+				</div>
+				<div class="form-field">
+					<label>Create Room</label>
+					<input type="text" placeholder="Enter new room name" name="roomCreated" />
 				</div>
 				<div class="form-field">
 					<button>Join</button>
+					
 				</div>
 			</form>
 		</div>
-		
+		<script src ="js/libs/jquery-3.3.1.min.js"></script>
+		<script src ="js/libs/deparam.js"></script>
+		<script src ="socket.io/socket.io.js"></script>
+		<script src ="js/index.js"></script>
 	</body>
 	
 </html>

@@ -17,7 +17,7 @@ var scrollToBottom = function(){
 
 socket.on('connect',function(){
 	var param = jQuery.deparam(window.location.search);
-
+	console.log(param);
 	socket.emit('join',param, function(err){
 		if(err){
 			alert(err);
@@ -36,7 +36,24 @@ socket.on('connect',function(){
 	
 });
 
-
+//socket.on('updateRoomList',function(rooms){
+//	var option = jQuery('<select></select>');
+//	var displayedRoom = [];
+//	var occurence = [];
+//	rooms.forEach(function(room){
+//		if(!displayedRoom.includes(room)){
+//			displayedRoom.push(room);
+//			occurence.push(1);
+//		}else{
+//			occurence[displayedRoom.indexOf(room)]++;
+//		}
+//	});
+//	displayedRoom.forEach(function(room){
+//		option.append(jQuery('<option></option>').text(room+' Users in the room: '+occurence[displayedRoom.indexOf(room)]));
+//	});
+//	jQuery('#room-list').html(option);
+//	
+//});
 
 
 socket.on('disconnect',function(){
